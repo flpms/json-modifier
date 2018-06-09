@@ -23,7 +23,7 @@ describe('Test getValidKeys()', () => {
       'Last-Name': 'lastName:string'
     };
 
-    let keys = getValidKeys(schema, json);
+    let keys = getValidKeys(json, schema);
 
     expect(keys).to.be.a('array');
     expect(keys).to.include.members(['First-Name', 'Middle-Name', 'Last-Name']);
@@ -36,11 +36,11 @@ describe('Test getValidKeys()', () => {
       'Last-Name': 'lastName:string'
     };
 
-    let keys = getValidKeys(schema, json);
+    let keys = getValidKeys(json, schema);
 
     expect(keys).to.be.a('array');
     expect(keys).to.include.members(['First-Name', 'Last-Name']);
-    expect(keys).to.not.include.members(['First-Name', 'Middle-Name']);
+    expect(keys).to.not.include.members(['Middle-Name']);
   });
 
 });
