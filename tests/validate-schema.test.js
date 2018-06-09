@@ -2,11 +2,11 @@
 
 const chai = require('chai');
 const mocha = require('mocha');
-const ValidateSchema = require('../lib/validate-schema.js');
+const validateSchema = require('../lib/validate-schema.js');
 
 const expect = chai.expect;
 
-describe('ValidateSchema()', () => {
+describe('Test validateSchema()', () => {
 
   it('expect throw an error for invalid schema', () => {
     const schema = {
@@ -16,7 +16,7 @@ describe('ValidateSchema()', () => {
     };
 
     expect(function () {
-      ValidateSchema(schema);
+      validateSchema(schema);
     }).to.throw('An invalid schema was provided');
   });
 
@@ -27,7 +27,7 @@ describe('ValidateSchema()', () => {
       "Last-Name": "lastName:string"
     };
 
-    expect(ValidateSchema(schema)).to.be.true;
+    expect(validateSchema(schema)).to.be.true;
   });
 
 

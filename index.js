@@ -1,15 +1,18 @@
 'use strict'
 
-var getValidKeys = require('./lib/getValidKeys.js');
+var exampleJson = require('./.example.json');
 
-function Translate(schema, json) {
+var ValidateSchema = require('./lib/validate-schema.js');
+var getValidKeys = require('./lib/get-valid-keys.js');
+var getKeysSchema = require('./lib/get-keys-schema.js');
 
-  var clone = {},
-      key;
-      
-  var validKeys = getValidKeys(schema, json);
+function Translate(schema, json, options) {
 
-  console.log(validKeys);
+  var clone = {};
+
+  validateSchema(schema);
+  var validKeys = getValidKeys(json, schema);
+  var newKeys = getKeysSchema(validKeys, schema);
 }
 
 module.exports = Translate;
