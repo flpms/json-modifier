@@ -43,8 +43,4 @@ describe('Test getValidKeys()', () => {
     expect(keys).to.not.include.members(['First-Name', 'Middle-Name']);
   });
 
-  it('expect omit key with null and undefined value', () => {
-    
-  });
-
 });
