@@ -2,6 +2,10 @@
 
 Translate any JSON easily, provide a schema with new keys and type format to output a new format object
 
+## Install
+
+`npm install `
+
 ## Usage
 
 ``` javascript
@@ -23,6 +27,9 @@ console.log(translatedObject);
 /*{
   name: 'Filipe M. Silva',
   age: 28
-}
-*/
+}*/
 ```
+
+### ROADMAP
+
+- adjust to supporte recursive objects
