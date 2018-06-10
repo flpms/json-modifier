@@ -4,7 +4,7 @@ Translate any JSON easily, provide a schema with new keys and type format to out
 
 ## Install
 
-`npm install `
+`npm install json-modifier`
 
 ## Usage
 
@@ -30,6 +30,7 @@ console.log(translatedObject);
 }*/
 ```
 
-### ROADMAP
+#### ROADMAP
 
 - adjust to supporte recursive objects
+- add `default` values support in schema
