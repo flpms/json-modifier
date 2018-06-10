@@ -2,17 +2,14 @@
 
 var exampleJson = require('./.example.json');
 
-var ValidateSchema = require('./lib/validate-schema.js');
+var validateSchema = require('./lib/validate-schema.js');
 var getValidKeys = require('./lib/get-valid-keys.js');
-var getKeysSchema = require('./lib/get-keys-schema.js');
+var buildNewObject = require('./lib/build-new-object.js');
 
-function Translate(schema, json, options) {
-
-  var clone = {};
-
+function Translate(schema, json) {
   validateSchema(schema);
   var validKeys = getValidKeys(json, schema);
-  var newKeys = getKeysSchema(validKeys, schema);
+  return buildNewObject(validKeys, json, schema);
 }
 
 module.exports = Translate;
