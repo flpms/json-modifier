@@ -1,5 +1,7 @@
 # JSON Modifier
 
+ [![Build Status](https://travis-ci.org/flpms/json-modifier.svg?branch=master)](https://travis-ci.org/flpms/json-modifier)
+
 Transform any JSON easily, provide a schema with new keys and type format to output a new format object
 
 ## Install
