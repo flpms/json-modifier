@@ -1,5 +1,5 @@
 {
-  "name": "translate-json",
+  "name": "json-modifier",
   "version": "1.0.0",
   "description": "translate json to a specific format with a simple schema",
   "main": "index.js",
