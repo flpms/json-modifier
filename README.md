@@ -9,6 +9,8 @@ Translate any JSON easily, provide a schema with new keys and type format to out
 ## Usage
 
 ``` javascript
+var JsonModifier = require('json-modifier');
+
 var exampleObject = {
   "Name": "Filipe M. Silva",
   "Age": "28",
@@ -21,7 +23,7 @@ var schema = {
   "Residencial-Address": 'omit'
 }
 
-var translatedObject = TranslateJSON(schema, exampleObject);
+var translatedObject = JsonModifier(schema, exampleObject);
 
 console.log(translatedObject);
 /*{
