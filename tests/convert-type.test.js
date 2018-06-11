@@ -24,6 +24,21 @@ describe('Test convertTypeByRule()', () => {
     expect(result).to.be.equal('');
   });
 
+  it('expect return empty string when value are undefined', () => {
+    const type = 'string';
+    const value = undefined;
+    let result = convertTypeByRule(value, type);
+    expect(result).to.be.equal('');
+  });
+
+  it('expect return zero as string when 0 is a value', () => {
+    const type = 'string';
+    const value = 0;
+    let result = convertTypeByRule(value, type);
+    expect(result).to.be.a('string');
+    expect(result).to.be.equal('0');
+  });
+
   it('expect return value when value type are equal type', () => {
     const type = 'string';
     const value = 'test';
