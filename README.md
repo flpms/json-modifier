@@ -16,24 +16,38 @@ var JsonModifier = require('json-modifier');
 var exampleObject = {
   "Name": "Filipe M. Silva",
   "Age": "28",
-  "Residencial-Address": "152 Lemon"
+  "Address": {
+    "house-Number": "52",
+    "Street": "Lemon",
+    "State": "SP"
+  }
+};
+
+var addressSchema = {
+  "house-Number": "houseNumber:number",
+  "Street": "street:string",
+  "State": "state:string"
 };
 
 var schema = {
   "Name": "name:string",
-  "Age": "age:number",
-  "Residencial-Address": 'omit'
+  "Age": "omit",
+  "Residencial-Address": "omit",
+  "Address": addressSchema
 }
 
 var translatedObject = JsonModifier(schema, exampleObject);
-
 console.log(translatedObject);
-/*
+```
+```JSON
 {
-  name: 'Filipe M. Silva',
-  age: 28
+  "name": "Filipe M. Silva",
+  "Address": {
+    "houseNumber": 52,
+    "street": "Lemon",
+    "state": "SP"
+  }
 }
-*/
 ```
 
 ## Schema instructions
@@ -59,5 +73,4 @@ Schema are a json which are formated by key/rule some examples:
 
 #### ROADMAP
 
-- adjust to supporte recursive objects
 - add `default` values support in schema
