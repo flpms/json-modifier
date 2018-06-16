@@ -12,7 +12,7 @@ describe('Test validateSchema()', () => {
     const schema = {
       "First-Name": "firstName:string",
       "Middle-Nane": "middleName:string",
-      "Last-Name": null
+      "Last-Name": undefined
     };
 
     expect(function () {
@@ -24,7 +24,9 @@ describe('Test validateSchema()', () => {
     const schema = {
       "First-Name": "firstName:string",
       "Middle-Nane": "middleName:string",
-      "Last-Name": "lastName:string"
+      "Last-Name": "lastName:string",
+      "null-value": null,
+      "object-value": {}
     };
 
     expect(validateSchema(schema)).to.be.true;
