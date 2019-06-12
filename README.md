@@ -11,9 +11,9 @@ Transform any JSON easily, provide a schema with new keys and type format to out
 ## Usage
 
 ``` javascript
-var JsonModifier = require('json-modifier');
+const JsonModifier = require('json-modifier');
 
-var exampleObject = {
+const exampleObject = {
   "Name": "Filipe M. Silva",
   "Age": "28",
   "Address": {
@@ -23,20 +23,20 @@ var exampleObject = {
   }
 };
 
-var addressSchema = {
+const addressSchema = {
   "house-Number": "houseNumber:number",
   "Street": "street:string",
   "State": "state:string"
 };
 
-var schema = {
+const schema = {
   "Name": "name:string",
   "Age": "omit",
   "Residencial-Address": "omit",
   "Address": addressSchema
 }
 
-var translatedObject = JsonModifier(schema, exampleObject);
+const translatedObject = JsonModifier(schema, exampleObject);
 console.log(translatedObject);
 ```
 ```JSON
